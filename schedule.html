@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gym Schedule</title>
+    <link rel="stylesheet" href="schedule.css">
+    <script src="sschedule.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Gym Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Membership</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Personal Training</a></li>
+                <li><a href="#">Nutrition</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="#">Payment</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Weekly Schedule</h2>
+            <div class="calendar">
+                <div class="day-names">
+                    <div class="day-name">Sun</div>
+                    <div class="day-name">Mon</div>
+                    <div class="day-name">Tue</div>
+                    <div class="day-name">Wed</div>
+                    <div class="day-name">Thu</div>
+                    <div class="day-name">Fri</div>
+                    <div class="day-name">Sat</div>
+                </div>
+                <div class="days">
+                    <div class="day"></div>
+                    <!-- add more days here -->
+                    <div class="day"></div>
+                </div>
+            </div>
+            <button id="add-event-button" onclick="showModal()">Add Event</button>
+            <div id="add-event-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="hideModal()">&times;</span>
+                    <h3>Add New Event</h3>
+                    <form>
+                        <label for="event-name">Event Name:</label>
+                        <input type="text" id="event-name" name="event-name">
+                        <label for="event-day">Day:</label>
+                        <select id="event-day" name="event-day">
+                            <option value="sun">Sunday</option>
+                            <option value="mon">Monday</option>
+                            <option value="tue">Tuesday</option>
+                            <option value="wed">Wednesday</option>
+                            <option value="thu">Thursday</option>
+                            <option value="fri">Friday</option>
+                            <option value="sat">Saturday</option>
+                        </select>
+                        <label for="event-time">Time:</label>
+                        <input type="time" id="event-time" name="event-time">
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Gym Management System. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

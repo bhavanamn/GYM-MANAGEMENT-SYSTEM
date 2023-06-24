@@ -1,0 +1,233 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['username'])) {
+
+    ?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Shape&Size</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Font Awesome Iocns cdn link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <style>
+            .quote-wrapper {
+                height: 300px;
+                position: relative;
+                width: 300px;
+            }
+
+            .text {
+                background: radial-gradient(ellipse at center,
+                        rgba(0, 128, 172, 1) 0%,
+                        rgba(0, 128, 172, 1) 70%,
+                        rgba(0, 128, 172, 0) 70.3%);
+                height: 100%;
+                width: 100%;
+            }
+
+            .text {
+                color: white;
+                position: relative;
+                margin: 0;
+            }
+
+            .text p {
+                font-size: 21px;
+                font-style: italic;
+                height: 100%;
+                line-height: 1.25;
+                padding: 0;
+                text-align: center;
+                text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+            }
+
+            .text::before {
+                content: "";
+                float: left;
+                height: 100%;
+                width: 50%;
+                shape-outside: polygon(0 0,
+                        98% 0,
+                        50% 6%,
+                        23.4% 17.3%,
+                        6% 32.6%,
+                        0 50%,
+                        6% 65.6%,
+                        23.4% 82.7%,
+                        50% 94%,
+                        98% 100%,
+                        0 100%);
+                shape-margin: 7%;
+            }
+
+
+
+            .text p::before {
+                content: "";
+                float: right;
+                height: 100%;
+                width: 50%;
+                shape-outside: polygon(2% 0%,
+                        100% 0%,
+                        100% 100%,
+                        2% 100%,
+                        50% 94%,
+                        76.6% 82.7%,
+                        94% 65.6%,
+                        100% 50%,
+                        94% 32.6%,
+                        76.6% 17.3%,
+                        50% 6%);
+                shape-margin: 7%;
+            }
+
+
+            .quote-wrapper blockquote footer {
+                bottom: 25px;
+                font-size: 17px;
+                font-style: italic;
+                position: absolute;
+                text-align: center;
+                text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+                width: 100%;
+
+            }
+
+            .quote-wrapper::before {
+                content: "\201C";
+                color: #ccc;
+                font-family: sans-serif, serif;
+                font-size: 270px;
+                height: 82px;
+                line-height: 1;
+                opacity: .9;
+                position: absolute;
+                top: -48px;
+                left: 0;
+                z-index: 1;
+            }
+
+            @media (min-width: 850px) {
+                .quote-wrapper {
+                    height: 370px;
+                    width: 370px;
+                }
+
+                .quote-wrapper::before {
+                    font-size: 300px;
+                }
+
+                .text p {
+                    font-size: 26px;
+                }
+
+                .quote-wrapper blockquote footer {
+                    bottom: 32px;
+                }
+            }
+
+            #container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            #s {
+                display: block;
+                width: 150px;
+                position: relative;
+                margin: 10px auto;
+                text-align: center;
+                background-color: #0f72e5;
+                border-radius: 20px;
+                color: #ffffff;
+                text-decoration: none;
+                padding: 8px 0;
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+        <!-- Font Awesome Iocns cdn link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="#" class="logo">
+                <i class="fas fa-dumbbell"></i>Shape&Size
+            </a>
+            <div class="navbar">
+
+                <a href="save.html" class="button button1">Home</a>
+                <a href="test.html" class="button button1">About</a>
+                <a href="gallery.html" class="button button1">gallery</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Program</button>
+                    <div class="dropdown-content">
+                        <a href="courses.html">Courses</a>
+                        <a href="membershippayment.html">Membership</a>
+                        <a href="shopping.html">shopping</a>
+                    </div>
+                </div>
+                <a href="policy.html" class="button button1">Policy</a>
+                <a href="contact.html" class="button button1">Contact</a>
+                <div class="dropdown">
+                    <button class="btn"><i class="fas fa-user"></i></button>
+                    <div class="dropdown-content">
+                        <p style="text-align:left">
+                            <?php echo $_SESSION['username']; ?>
+                        </p>
+                        <a href="logout.php" style="text-align:center">Logout</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+        <br><br>
+
+        <section class="home">
+            <div class="max-width">
+                <div class="home-content">
+                    <h3>Welcome to,<br>Shape&Size</h3>
+                    <p>One of the best gym in your neighbourhood .Your just one step away from our page so,get started</p>
+                    <a href="bmi.html" id="s">Calculate your BMI</a>
+                </div>
+                <div class="home-image">
+                    <img src="\gymphoto.jpg" alt="gymphoto">
+                </div>
+
+            </div>
+        </section><br>
+        <div id="container">
+            <div class="quote-wrapper">
+                <blockquote class="text">
+                    <p>You Attittude define your character,build your character such that it molds your attitude.</p>
+                    <footer>– Unknown</footer>
+                </blockquote>
+            </div>
+            <div class="quote-wrapper">
+                <blockquote class="text">
+                    <p>You Attittude define your character,build your character such that it molds your attitude.</p>
+                    <footer>– Unknown</footer>
+                </blockquote>
+            </div>
+        </div>
+    </body>
+
+    </html>
+<?php
+
+} else {
+
+    header("Location: index.php");
+
+    exit();
+
+}
+
+?>

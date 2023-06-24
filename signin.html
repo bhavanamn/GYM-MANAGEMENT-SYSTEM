@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container {padding: 16px;background-color:lightblue;}
+    .content {background-color: #fefefe;margin: 5% auto 15% auto; border: 1px solid #888;width: 50%; text-align: center;}
+    </style>
+    </head>
+<body>
+    <form class="content" method="post" action="insert.php" >
+        <div class="container">
+        <h1>Registration Form</h1><br>
+        <p>Please fill in this form to create an account.</p><br>
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" ><br><br>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email"  ><br><br>
+    <label for="contact"><b>contact no.</b></label>
+    <input type="tel" placeholder="Enter your contact no." name="contact"><br><br>
+    <label for="Address"><b>Address</b></label>
+    <input type="text" placeholder="Enter Address" name="address" ><br><br>
+    <label for="contact"><b>Pincode</b></label>
+    <input type="tel" placeholder="Enter the pincode" name="pin" ><br><br>
+<label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" ><br><br>
+<label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" ><br><br>
+ <label>
+        <input type="checkbox"  name="remember"  class="defaultcheckbox" style="margin:2px">Agree to our<a href="#" style="color:dodgerblue">Terms & Privacy</a>.<br><br>
+    </label>
+                <button type="submit" name="submit" class="signup">Sign Up</button>
+        <button type="button" class="cancelbtn"> Cancel</button>
+       Have an account?<a href="login.html"> Sign in</a>
+       </div>
+</body>
+</html>

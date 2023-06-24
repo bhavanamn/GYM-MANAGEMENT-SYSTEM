@@ -1,0 +1,152 @@
+<html>
+<link rel="stylesheet" href="form1.css">
+<script>
+
+    
+    const form = document.querySelector('form');
+    const nameInput = document.querySelector('input[name="name"]');
+    const mnoInput = document.querySelector('input[name="mno"]');
+    const maddInput = document.querySelector('input[name="madd"]');
+    const muserInput = document.querySelector('input[name="muser"]');
+    const passwordInput = document.querySelector('input[name="psw"]');
+    const repeatPasswordInput = document.querySelector('input[name="psw-repeat"]');
+
+form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+    const name = nameInput.value.trim();
+    const mno = mnoInput.value.trim();
+    const madd = maddInput.value.trim();
+    const muser = muserInput.value.trim();
+    const password = passwordInput.value.trim();
+    const repeatPassword = repeatPasswordInput.value.trim();
+
+    // Name validation
+    if (name === '') {
+        showError(nameInput, 'Name is required');
+} else {
+        removeError(nameInput);
+}
+
+    // Mobile number validation
+    if (mno === '') {
+        showError(mnoInput, 'Mobile number is required');
+} else if (!isValidMobileNumber(mno)) {
+        showError(mnoInput, 'Invalid mobile number');
+} else {
+        removeError(mnoInput);
+}
+
+    // Address validation
+    if (madd === '') {
+        showError(maddInput, 'Address is required');
+} else {
+        removeError(maddInput);
+}
+
+    // Username validation
+    if (muser === '') {
+        showError(muserInput, 'Username is required');
+} else {
+        removeError(muserInput);
+}
+
+    // Password validation
+    if (password === '') {
+        showError(passwordInput, 'Password is required');
+} else if (!isValidPassword(password)) {
+        showError(passwordInput, 'Password must contain at least 8 characters with at least one uppercase letter, one lowercase letter, one number, and one special character');
+} else {
+        removeError(passwordInput);
+}
+
+    // Repeat password validation
+    if (repeatPassword === '') {
+        showError(repeatPasswordInput, 'Repeat password is required');
+} else if (password !== repeatPassword) {
+        showError(repeatPasswordInput, 'Passwords do not match');
+} else {
+        removeError(repeatPasswordInput);
+}
+
+    // Submit form if there are no errors
+    if (!document.querySelectorAll('.error').length) {
+        form.submit();
+}
+});
+
+    function showError(input, message) {
+        // Remove any existing error messages
+        removeError(input);
+
+    // Add new error message
+    const errorElement = document.createElement('div');
+    errorElement.classList.add('error');
+    errorElement.innerText = message;
+    input.parentNode.appendChild(errorElement);
+
+    // Add red border to input
+    input.classList.add('error-border');
+}
+
+    function removeError(input) {
+// Remove error message
+const errorElement = input.parentNode.querySelector('.error');
+    if (errorElement) {
+        errorElement.remove();
+}
+
+    // Remove red border from input
+    input.classList.remove('error-border');
+}
+
+    function isValidMobileNumber(mno) {
+const mobileNumberRegex = /^[+]?\d{10, 12}$/;
+    return mobileNumberRegex.test(mno);
+}
+
+    function isValidPassword(password) {
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+}
+
+</script>
+<form method="POST" action="/insertion.php">
+    <div class="container">
+        <h1>Member Registration</h1>
+        <p>Enter following details to register as a Member</p>
+        <hr>
+
+        <!-- id,name,mno,madd,muser,gid,tid-->
+
+        
+        <label for="Member_name"><b>Name</b></label>
+        <input type="text" placeholder="Member_name" name="name" required><br>
+
+        <label for="Member_no"><b>MobileNo</b></label>
+        <input type="text" placeholder="+91 8239238912" name="mno" required><br>
+
+        <label for="Member_address"><b>Address</b></label>
+        <input type="text" placeholder="enter your adress.." name="madd" required>
+
+        <label for="Member_username"><b>Username</b></label>
+        <input type="text" placeholder="Username" name="muser" required><br>
+
+       <!-- <label for="Gym_id"><b>Enter Trainer id:-</b></label>
+        <input type="text" placeholder="1" name="tid" required><br>-->
+
+
+        <label for="Password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    <label for="Password-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <hr>
+
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <button type="submit" class="registerbtn">Register</button>
+    </div>
+
+
+</form>
+
+</html>

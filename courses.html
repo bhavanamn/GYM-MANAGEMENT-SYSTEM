@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>courses available</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: black;
+            color:antiquewhite;
+        }
+       
+        .card {
+  box-shadow: 0 4px 8px 0 grey;
+  background-color: azure;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color:darkslategray;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+.p{ display:grid;
+      grid-template-columns: 1fr 1fr 1fr ;}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <i class="fas fa-dumbbell"></i>Shape&Size       
+           </a> 
+        <div class="navbar">
+           
+            <a href="save.html" class="button button1">Home</a>
+            <a href="about.html" class="button button1">About</a>
+            <a href="gallery.html" class="button button1">gallery</a>
+            <div class="dropdown">
+                <button class="dropbtn">Program</button>
+                <div class="dropdown-content">
+                  <a href="courses.html">Courses</a>
+                  <a href="membership.html">Membership</a>
+                  <a href="shopping.html">shopping</a>
+                </div>
+              </div>
+            <a href="policy.html" class="button button1">Policy</a>
+            <a href="contact.html" class="button button1">Contact</a>
+            <a href="#">|</a>
+            <a href="signin.html" class="btn">Sign Up</a>
+            
+            
+        </div>
+
+    </header>
+   <br><br><br><br><br>
+    <h1 style="text-align:center">Courses Offered</h1><br><br>
+    <h2 style="text-align: center;color:aliceblue"> Fitness and Training</h2><br><br><br>
+    <div class="p">
+        <div class="card">
+            <td>
+            <img src="\Screenshot_20230305_212359.png" alt="Denim Jeans" style="width:100%">
+            <h1>Workout</h1>
+            <p class="price">₹2000/month</p>
+            <p>with instructor </p>
+            <p><button onclick="document.location='newpay.html'">Buy</button></p>
+          </div>
+           </td>
+           <td>
+            <div class="card">
+                <img src="\Screenshot_20230305_212349.png" alt="Denim Jeans" style="width:100%">
+                <h1>Workout</h1>
+                <p class="price">₹1500/month</p>
+                <p>without instructor </p>
+                <p><button>Add to Cart</button></p>
+              </div>
+           </td>
+           <td>
+            <div class="card">
+                <img src="\Screenshot_20230305_212412.png" alt="Denim Jeans" style="width:100%">
+                <h1>nutrionist</h1>
+                <p class="price">₹4000/month</p>
+                <p>with professional nutrionist and fitness expert</p>
+                <p><button>Add to Cart</button></p>
+              </div>
+           </td>
+        </tr>
+    </div><br>
+    <h2 style="text-align: center; color:aliceblue">Yoga</h2><br><br><br>
+    <div class="p">
+        <div class="card">
+            <td>
+            <img src="\Screenshot_20230305_212500.png" alt="Denim Jeans" style="width:100%">
+            <h1> basic yoga</h1>
+            <p class="price">₹1000/month</p>
+            <p>with instructor for adult and children</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+           </td>
+           <td>
+            <div class="card">
+                <img src="\Screenshot_20230305_212451.png" alt="Denim Jeans" style="width:100%">
+                <h1>practice yoga</h1>
+                <p class="price">₹900/month</p>
+                <p>without instructor</p>
+                <p><button>Add to Cart</button></p>
+              </div>
+           </td>
+           <td>
+            <div class="card">
+                <img src="\Screenshot_20230305_212443.png" alt="Denim Jeans" style="width:100%">
+                <h1>professional yoga</h1>
+                <p class="price">₹1500/month</p>
+                <p>higher form of yoga with certficate</p>
+                <p><button>Add to Cart</button></p>
+              </div>
+           </td>
+        </tr>
+    </div><br>
+    <h2 style="text-align: center;color:aliceblue">Zumba</h2><br><br><br>
+    <div class="p">
+        <div class="card">
+            <td>
+            <img src="\Screenshot_20230305_212305.png" alt="Denim Jeans" style="width:100%">
+            <h1>Zumba</h1>
+            <p class="price">₹1200/month</p>
+            <p>for ladies below 46 years</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+           </td>
+           <td>
+            <div class="card">
+                <img src="\Screenshot_20230305_212312.png" alt="Denim Jeans" style="width:100%">
+                <h1>Zumba</h1>
+                <p class="price">₹1500/month</p>
+                <p>for ladies above 47 years</p>
+                <p><button>Add to Cart</button></p>
+              </div>
+           </td>
+           <td>
+            <div class="card">
+                <img src="\Screenshot_20230305_212325.png" alt="Denim Jeans" style="width:100%">
+                <h1>zumba for children</h1>
+                <p class="price">₹500/month</p>
+                <p>dance workout for children</p>
+                <p><button>Add to Cart</button></p>
+              </div>
+           </td>
+        </tr>
+    </div><br>
+    <h3 style="text-align:center"><u>Zumba</u></h3>
+    <p><b>
+       Havin trouble with your wait? Does everybody constantly bodyshame you?Zumba is considered as on the best solutions for wight loss
+       We offer Zumba courses by our best of the the best experts and professionalist teachers and we also provide certificates.
+        Do watch our youutbe video on these... 
+
+    </b></p><br>
+    <iframe width="800" height="400"
+src="https://www.youtube.com/embed/vG_Bs0QLc3I">
+</iframe>
+    <h3 style="text-align:center"><u>Yoga</u></h3>
+    <p><b>
+       Lost focus?Yoga is considered as one of the best solutions for focus and healthy life ahead.It makes the once mindest set to achieve ones goal and it is the key to life 
+       We offer Yoga courses by our best of the the best experts and professionalist teachers and we also provide certificates.
+        Do watch our youutbe video on these... 
+
+    </b></p><br>
+    <iframe width="800" height="400"
+src="https://www.youtube.com/embed/BPK9WNtpBgk">
+</iframe>
+    
+    <h3 style="text-align:center"><u>Workout</u></h3>
+    <p><b>
+        Workout is considered as one of the basic training of physical fitness,mainitng physic with strenght is one of the main characteriestics of the humans body
+        We offer with and without trainer courses and we also offer special trainig sessions for adults above 18 years of age.
+        Do watch our youtube video on these... 
+
+    </b></p><br>
+    <iframe width="800" height="400"
+src="https://www.youtube.com/embed/Rd6ao0klUb8"><br><br>
+
+</body>
+</html>

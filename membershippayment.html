@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gym Membership Payment Form</title>
+    <link rel="stylesheet" href="style_membership.css">
+    <style>
+      .pay-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+    </style>
+    <script>
+        // get form element
+const form = document.querySelector('form');
+
+// add submit event listener
+form.addEventListener('submit', function(event) {
+  // prevent form submission
+  event.preventDefault();
+
+  // get form fields
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const membershipType = document.getElementById('membership-type');
+  const cardNumber = document.getElementById('card-number');
+  const expirationDate = document.getElementById('expiration-date');
+  const cvv = document.getElementById('cvv');
+
+  // set regular expressions for validation
+  const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const cardNumberRegex = /^\d{16}$/;
+  const expirationDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+  const cvvRegex = /^\d{3}$/;
+
+  // validate form fields
+  let valid = true;
+
+  if (!nameRegex.test(name.value)) {
+    name.classList.add('invalid');
+    valid = false;
+  } else {
+    name.classList.remove('invalid');
+  }
+
+  if (!emailRegex.test(email.value)) {
+    email.classList.add('invalid');
+    valid = false;
+  } else {
+    email.classList.remove('invalid');
+  }
+
+  if (membershipType.value === '') {
+    membershipType.classList.add('invalid');
+    valid = false;
+  } else {
+    membershipType.classList.remove('invalid');
+  }
+
+  if (!cardNumberRegex.test(cardNumber.value)) {
+    cardNumber.classList.add('invalid');
+    valid = false;
+  } else {
+    cardNumber.classList.remove('invalid');
+  }
+
+  if (!expirationDateRegex.test(expirationDate.value)) {
+    expirationDate.classList.add('invalid');
+    valid = false;
+  } else {
+    expirationDate.classList.remove('invalid');
+  }
+
+  if (!cvvRegex.test(cvv.value)) {
+    cvv.classList.add('invalid');
+    valid = false;
+  } else {
+    cvv.classList.remove('invalid');
+  }
+
+  // if form is valid, submit it
+  if (valid) {
+    form.submit();
+  }
+});
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gym Membership Payment Form</h1>
+        <form method="POST" action="payment.php">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" type=required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"  required>
+
+            <label for="membership-type">MembershipType</label>
+            <p>Please select your favorite Course:</p>
+             <input type="radio" id="html" name="fav_language" value="HTML">
+             <label for="html">GYM</label><br>
+             <input type="radio" id="css" name="fav_language" value="CSS">
+             <label for="css">YOGA</label><br>
+             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+             <label for="javascript">ZUMBA</label>
+            
+              <br>  
+            
+              <p>Please select your plan:</p>
+              <input type="radio" id="age1" name="age" value="30">
+              <label for="age1">₹2000/month</label><br>
+              <input type="radio" id="age2" name="age" value="60">
+              <label for="age2">₹20000/year</label><br>  
+              <input type="radio" id="age3" name="age" value="100">
+              <label for="age3">₹6000/qtrly</label><br><br>
+
+            <label for="card-number">CardNumber</label>
+            <input type="number" id="card-number" name="card-number" required>
+
+            <label for="expiration-date">ExpirationDate</label>
+            <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" name="cvv" required>
+
+          
+            <button>Pay Now</button>
+
+          
+
+        </form>
+    </div>
+    <script src="script_membershippayment.js"></script>
+</body>
+
+</html>

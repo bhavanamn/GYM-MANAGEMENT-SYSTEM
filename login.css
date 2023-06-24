@@ -1,0 +1,78 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+
+ body {
+     background: url(https://images.unsplash.com/photo-1540496905036-5937c10647cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+     background-repeat:no-repeat;
+     background-size: cover;
+     align-items: center;
+     justify-content: center;
+     display: flex;
+ }
+
+ .container {
+     position: relative;
+     margin-top: 100px;
+     width: 450px;
+     height: auto;
+     background: #dedede;
+     border-radius: 5px;
+ }
+
+ .label {
+     padding: 20px 130px;
+     font-size: 50;
+     font-weight: bold;
+     color: #130f40;
+ }
+
+ form {
+     padding: 20px 40px;
+     margin-top: 30px;
+ }
+
+ .font {
+     font-size: 20px;
+     color: #130f40;
+     margin: 5px 0;
+ }
+
+  input {
+     height: 40px;
+     width: 350px;
+     padding: 0 5px;
+     font-size: 18px;
+     outline: none;
+     border: 1px solid silver;
+ }
+
+ .font2 {
+    font-size: 20px;
+    color: #130f40;
+    margin: 5px 0;
+ }
+
+ button {
+     margin: 45px 0 30px 0;
+     height: 45px;
+     width: 365px;
+     font-size: 20px;
+     color: rgb(136, 24, 24);
+     outline: none;
+     cursor: pointer;
+     font-weight: bold;
+     background: #1A237E;
+     border-radius: 3px;
+     border: 1px;
+
+ }
+
+ .signup_link {
+     margin: 0px 0;
+     text-align: center;
+     font-size: 16px;
+     color: #666666;
+ }
+

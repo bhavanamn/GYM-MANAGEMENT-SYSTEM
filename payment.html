@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gym Membership Payment Form</title>
+    <link rel="stylesheet" href="style_membership.css">
+    <script>
+        // get form element
+const form = document.querySelector('form');
+
+// add submit event listener
+form.addEventListener('submit', function(event) {
+  // prevent form submission
+  event.preventDefault();
+
+  // get form fields
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const membershipType = document.getElementById('membership-type');
+  const cardNumber = document.getElementById('card-number');
+  const expirationDate = document.getElementById('expiration-date');
+  const cvv = document.getElementById('cvv');
+
+  // set regular expressions for validation
+  const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const cardNumberRegex = /^\d{16}$/;
+  const expirationDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+  const cvvRegex = /^\d{3}$/;
+
+  // validate form fields
+  let valid = true;
+
+  if (!nameRegex.test(name.value)) {
+    name.classList.add('invalid');
+    valid = false;
+  } else {
+    name.classList.remove('invalid');
+  }
+
+  if (!emailRegex.test(email.value)) {
+    email.classList.add('invalid');
+    valid = false;
+  } else {
+    email.classList.remove('invalid');
+  }
+
+  if (membershipType.value === '') {
+    membershipType.classList.add('invalid');
+    valid = false;
+  } else {
+    membershipType.classList.remove('invalid');
+  }
+
+  if (!cardNumberRegex.test(cardNumber.value)) {
+    cardNumber.classList.add('invalid');
+    valid = false;
+  } else {
+    cardNumber.classList.remove('invalid');
+  }
+
+  if (!expirationDateRegex.test(expirationDate.value)) {
+    expirationDate.classList.add('invalid');
+    valid = false;
+  } else {
+    expirationDate.classList.remove('invalid');
+  }
+
+  if (!cvvRegex.test(cvv.value)) {
+    cvv.classList.add('invalid');
+    valid = false;
+  } else {
+    cvv.classList.remove('invalid');
+  }
+
+  // if form is valid, submit it
+  if (valid) {
+    form.submit();
+  }
+});
+
+    </script>
+</head>
+
+<body onload="displayCartTotal()">
+    <div class="container">
+        <h1>Gym Membership Payment Form</h1>
+        <form method="POST" action="payment.php">
+            <label for="name">Username</label>
+            <input type="text" id="name" name="name" type=required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"  required>
+
+            <label for="card-number">CardNumber</label>
+            <input type="number" id="card-number" name="card-number" required>
+
+            <label for="expiration-date">ExpirationDate</label>
+            <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" name="cvv" required>
+            <p class="total-container" id="total-price"><span class="total">Total: $0</span></p>
+
+
+            <input type="submit" value="Pay" name="Pay">
+        </form>
+    </div>
+    <script src="script_membershippayment.js"></script>
+    <script src="shoppingscript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin Login</title>
+    
+    <style>
+     /* CSS for login box */
+.loginBox {
+  width: 350px;
+  height: 500px;
+  background: #fff;
+  color: #000;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+/* CSS for user image */
+.user {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+/* CSS for heading */
+h2 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* CSS for form elements */
+form p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+/* CSS for input fields */
+form input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* CSS for submit button */
+form input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* CSS for forget password link */
+form a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+/* CSS for go home link */
+form a:last-child {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #000;
+} 
+   
+
+</style>
+    <!-- <script>
+        function vali() {
+                // Get form elements
+                const name = document.getElementById("name");
+                const password = document.getElementById("password");
+
+                // Regular expressions for validation
+                const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+                // Validate name field
+                if (!nameRegex.test(name.value.trim())) {
+                    alert("Please enter a valid name!");
+                    name.focus();
+                    return false;
+                }
+
+                // Validate password field
+                if (!passwordRegex.test(password.value.trim())) {
+                    alert("Please enter a valid password! Password must contain at least 8 characters including at least one uppercase letter, one lowercase letter, one number and one special character.");
+                    password.focus();
+                    return false;
+                }
+
+                // If all validations pass, submit the form
+                return true;
+            }
+
+    </script>
+ -->
+</head>
+
+<body>
+    <div class="loginBox">
+        <img src="https://img.icons8.com/external-itim2101-fill-itim2101/1x/external-admin-network-technology-itim2101-fill-itim2101-2.png" class="user">
+        <h2> Admin </h2>
+        <form action="adminportal.php" method='POST' onsubmit="return vali()">
+            <p>USER NAME</p>
+            <input type="text" name="i" id="name" placeholder="Bhavana Murahari" maxlength="20">
+            <p>PASSWORD</p>
+            <input type="password" name="p" id="password" placeholder="Bhavana@123" maxlength="15">
+            <input type="submit" name="" value="Sign In">
+            <a href="forgotpassword.html">Forget Password ?</a><br><br>
+            <a href="save.html">Go home</a> <br>
+        </form>
+    </div>
+</body>
+
+</html>
